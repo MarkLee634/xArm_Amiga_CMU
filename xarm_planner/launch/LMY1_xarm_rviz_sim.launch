@@ -1,0 +1,29 @@
+<launch>
+  <arg name="robot_dof" default="6" />
+  <arg name="add_gripper" default="false" />
+  <arg name="add_vacuum_gripper" default="false" />
+  <arg name="namespace" default="xarm"/>
+  <arg name="robot_type" default="xarm"/>
+
+  <include file="$(find xarm_planner)/launch/moveit_sim_configurations.launch">
+    <arg name="arm_dof" value="$(arg robot_dof)" />
+    <arg name="end_effector" value="_gripper" if="$(arg add_gripper)" />
+    <arg name="end_effector" value="_vacuum_gripper" if="$(arg add_vacuum_gripper)" />
+    <arg name="namespace" value="$(arg namespace)" />
+    <arg name="robot_type" value="$(arg robot_type)" />
+  </include>
+
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find xarm_gazebo)/worlds/xarm_table_pipes.world"/>
+  </include>
+
+    <!-- spawn robot model in gazebo, located on the table -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"
+    respawn="false" output="screen"
+    args="-urdf -model xarm5 -x -0.2 -y -0.6 -z 1.021 -Y 1.571 -param robot_description"/>
+
+
+
+</launch>
