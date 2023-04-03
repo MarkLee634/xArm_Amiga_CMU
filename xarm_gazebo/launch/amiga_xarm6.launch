@@ -6,6 +6,7 @@
   <arg name="add_vacuum_gripper" default="false" />
   <arg name="xarm_velocity_control"  />
 
+
   <rosparam file="$(find xarm6_moveit_config)/config/xarm6_params.yaml" command="load" ns="$(arg namespace)"/>
   <rosparam if="$(arg add_gripper)" file="$(find xarm_controller)/config/gripper_gazebo_ros_control.yaml" command="load"/>
   <!-- startup simulated world -->
@@ -18,6 +19,11 @@
   <param unless="$(eval arg('add_gripper') or arg('add_vacuum_gripper'))" name="robot_description"
     command="$(find xacro)/xacro
     --inorder '$(find xarm_description)/urdf/xarm6_robot.urdf.xacro'" />
+
+  <param if="$(arg add_gripper)" name="robot_description"
+    command="$(find xacro)/xacro
+    --inorder '$(find xarm_description)/urdf/xarm6_with_gripper.xacro'" />
+
 
   <!-- spawn robot model in gazebo, located on the table -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"

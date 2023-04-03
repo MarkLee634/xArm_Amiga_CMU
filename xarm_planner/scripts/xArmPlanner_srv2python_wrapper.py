@@ -29,7 +29,7 @@ class Srv2Python():
         # self.stuff = 0
 
 
-    def request_srv_cartesian_plan(self, x,y,z, qw,qx,qy,qz):
+    def request_srv_cartesian_line_plan(self, x,y,z, qw,qx,qy,qz):
         """
         Requests a cartesian plan for a robotic arm's end effector to move to a desired position and orientation in 3D space by communicating with the "xarm_straight_plan" ROS service.
         
@@ -75,6 +75,38 @@ class Srv2Python():
             return reponse.success
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
+
+    def request_srv_cartesian_pose_plan(self, x,y,z, qw,qx,qy,qz):
+
+
+            # hang here until xarm_planner node publishes this srv
+            rospy.wait_for_service('xarm_pose_plan')
+
+            try:
+                #geometry msg Pose srv
+                requesting_geometry_pose = rospy.ServiceProxy('xarm_pose_plan', pose_plan)
+                
+                #init datatype
+                target = Pose() 
+
+                #update with input param
+                target.position.x = x
+                target.position.y = y
+                target.position.z = z
+
+                target.orientation.x = qx
+                target.orientation.x = qy
+                target.orientation.x = qz
+                target.orientation.w = qw
+
+                # srv request to xarm planner
+                reponse = requesting_geometry_pose(target)
+
+                return reponse.success
+            except rospy.ServiceException as e:
+                print("Service call failed: %s"%e)
+
+            
 
     
     def request_srv_joint_plan(self, input_joints):
