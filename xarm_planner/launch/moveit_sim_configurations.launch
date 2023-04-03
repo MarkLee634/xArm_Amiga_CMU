@@ -19,6 +19,8 @@
     <arg name="show_rviz" value="true" />
     <!-- option to load gripper controller in simulation -->
     <arg name="gripper_controller" value="true" if="$(eval end_effector=='_gripper')" />
+
   </include>
+
 
 </launch>
