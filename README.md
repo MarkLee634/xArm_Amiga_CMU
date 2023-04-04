@@ -1,6 +1,7 @@
 # xArm_Amiga_CMU
 
 # Setup
+Simple. Mainly Gazebo and MoveIt package installation required. Then clone this repository in your `catkin_ws/src` and then `catkin_make`. Additional instructions can be found in the original [xarm_ros repository](https://github.com/xArm-Developer/xarm_ros#3-preparations-before-using-this-package) 
 
 ## Create Amiga model in Gazebo
 1. Move model directory to gazebo directory 
