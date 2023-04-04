@@ -53,19 +53,18 @@ Manually move the EE in MoveIt GUI and press `Plan & Execute` to move the robot.
 ![Motion from scripted interface](doc/EE.png)
 
 
-3a. Python Script for desired Motion using ROS service to MoveGroup Interface
-<span style="color:red">
-TODO: Currently, this launch setup does not work with the python script `xArm_planar_motion.py` as it did above. Needs to be resolved to work with MoveGroup script interface. </br>
-</span>
+3. (A) Python Script for desired Motion using ROS service to MoveGroup Interface
 
-3b. Checking MoveIt planning feasibility with custom end-effector. 
+<strong>TODO: Currently, this launch setup does not work with the python script `xArm_planar_motion.py` as it did above. Needs to be resolved to work with MoveGroup script interface.</strong> </br>
+
+
+3. (B) Checking MoveIt planning feasibility with custom end-effector. 
 Run this separately from previous MoveIt file. The previous `xarm6_gripper_moveit_gazebo.launch` is planning with a smaller EE and NOT the custom EE. The `demo_customEE_gazebo.launch` file accounts for the right dimension of the gripp.er
 ```
 roslaunch xarm6_moveit_config demo_customEE_gazebo.launch 
 ```
 
-<span style="color:red">
-TODO: Currently, this MoveIt launch setup does not work with Gazebo to update the joint angles. Needs to be resolved to work with above Gazebo setup and python script. </br>
-</span>
+<strong>TODO: Currently, this MoveIt launch setup does not work with Gazebo to update the joint angles. Needs to be resolved to work with above Gazebo setup and python script. </strong></br>
+
 
 ![Motion from scripted interface](doc/EE2.png)
