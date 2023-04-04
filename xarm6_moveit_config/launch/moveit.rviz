@@ -1,6 +1,6 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 84
+    Help Height: 70
     Name: Displays
     Property Tree Widget:
       Expanded:
@@ -9,9 +9,8 @@ Panels:
         - /RobotModel1
         - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/link_eef1
       Splitter Ratio: 0.43631038069725037
-    Tree Height: 252
+    Tree Height: 413
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -114,6 +113,15 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          other_geometry_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -203,6 +211,15 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          other_geometry_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -261,6 +278,15 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        link_tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        other_geometry_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -293,7 +319,11 @@ Visualization Manager:
         link_base:
           Value: false
         link_eef:
+          Value: false
+        link_tcp:
           Value: true
+        other_geometry_link:
+          Value: false
         world:
           Value: false
       Marker Alpha: 1
@@ -312,7 +342,9 @@ Visualization Manager:
                     link5:
                       link6:
                         link_eef:
-                          {}
+                          other_geometry_link:
+                            link_tcp:
+                              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -331,7 +363,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.6667557954788208
+      Distance: 3.1958134174346924
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -347,9 +379,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: -0.040202341973781586
+      Pitch: 0.2447974681854248
       Target Frame: world
-      Yaw: 5.554948329925537
+      Yaw: 5.144944667816162
     Saved: ~
 Window Geometry:
   Displays:
@@ -363,7 +395,7 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002ad000003b9fc0200000007fb000000100044006900730070006c006100790073010000003d0000018d000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001d0000002260000017d00ffffff000004cd000003b900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002ad000003b9fc0200000007fb000000100044006900730070006c006100790073010000003d00000220000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670100000263000001930000017d00ffffff000004cd000003b900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1920

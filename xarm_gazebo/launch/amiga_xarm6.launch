@@ -2,7 +2,7 @@
 <launch>
   <arg name="gui" default="true" doc="Starts gazebo gui" />
   <arg name="namespace" default="xarm"/>
-  <arg name="add_gripper" default="true" />
+  <arg name="add_gripper" default="false" />
   <arg name="add_vacuum_gripper" default="false" />
   <arg name="xarm_velocity_control"  />
 
