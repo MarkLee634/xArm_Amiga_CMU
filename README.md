@@ -23,3 +23,5 @@ Manually move the EE in MoveIt GUI and press `Plan & Execute` to move the robot.
 `~/catkin_ws/src/xArm_Amiga_CMU/xarm_planner/scripts`
 `chmod +x xArm_planar_motion.py`
 `python xArm_planar_motion.py`
+
+![Motion from scripted interface](doc/amiga_script.png)
